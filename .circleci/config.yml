@@ -53,16 +53,9 @@ jobs:
       - run: gcloud --quiet container clusters get-credentials ${GOOGLE_CLUSTER_NAME}
       - run: gcloud container clusters get-credentials ${GOOGLE_CLUSTER_NAME} --zone ${GOOGLE_COMPUTE_ZONE} --project ${GOOGLE_PROJECT_ID}
       - run: gcloud docker -- push gcr.io/${GOOGLE_PROJECT_ID}/containerdemo:$CIRCLE_SHA1
+      - run: pwd
+      - run: kubectl apply -f ../kube/web-deployment.yml
 
-  # Deploy to GKE
-  deploy-dev-server:
-    docker:
-      - image: turbinelabs/gcloud-build:0.12.4
-    steps:
-      - checkout
-      - run: openrc boot
-      - run: chmod +x ./.circleci/deploy.sh   #IN THIS FILE, YOU WILL HAVE YOUR kubectl deploy logic
-      - run: ./.circleci/deploy.sh
 
 workflows:
   version: 2
@@ -80,13 +73,6 @@ workflows:
             branches:
               only: master
       - push-dev-server:
-          filters:
-            branches:
-              only: master
-      - deploy-dev-server:
-          requires:
-            - build
-            - push-dev-server
           filters:
             branches:
               only: master
