@@ -1,0 +1,20 @@
+# web-controller.yml
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: containerdemo
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        name: containerdemo
+    spec:
+      nodeSelector:
+        cloud.google.com/gke-nodepool: default-pool
+      containers:
+        - image: gcr.io/nmallyatestproject/containerdemo:1ba0b464c46a852d60dfcd09164c1548bd2be37a
+          name: containerdemo
+          ports:
+            - containerPort: 3000
+              name: http-server

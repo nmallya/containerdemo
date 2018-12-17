@@ -1,0 +1,1 @@
+kubectl apply -f ./kube/web-deployment.yml

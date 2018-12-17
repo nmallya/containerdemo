@@ -55,14 +55,13 @@ jobs:
       - run: gcloud docker -- push gcr.io/${GOOGLE_PROJECT_ID}/containerdemo:$CIRCLE_SHA1
 
   # Deploy to GKE
-#  deploy-dev-server:
-#    docker:
-#      - image: turbinelabs/gcloud-build:0.12.4
-#    steps:
-#      - checkout
-#      - run: openrc boot
-#      - run: chmod +x ./.circleci/deploy_qa.sh   #IN THIS FILE, YOU WILL HAVE YOUR kubectl deploy logic
-#      - run: ./.circleci/deploy_qa.sh
+  deploy-dev-server:
+    docker:
+      - image: turbinelabs/gcloud-build:0.12.4
+    steps:
+      - checkout
+      - run: openrc boot
+      - run: kubectl apply -f ./kube/web-deployment.yml
 
 workflows:
   version: 2
