@@ -1,0 +1,11 @@
+{
+  "critical": {
+    "identity": {
+      "docker-reference": "gcr.io/nmallyatestproject/containerdemo"
+    },
+    "image": {
+      "docker-manifest-digest": "sha256:65addc85a9d4dbb7c10fddb8d9a1b95d0d0bb44ffb7c80b6eb802254846959d1"
+    },
+    "type": "Google cloud binauthz container signature"
+  }
+}
