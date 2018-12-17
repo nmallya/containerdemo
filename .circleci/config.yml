@@ -46,13 +46,15 @@ jobs:
       - run: openrc boot
       - run: docker build -t containerdemo -f ./Dockerfile .
       - run: docker tag containerdemo gcr.io/nmallyatestproject/containerdemo:$CIRCLE_SHA1
+      - run: echo $GCLOUD_SERVICE_KEY | base64 --decode -i > ${HOME}/account-auth.json
+      - run: gcloud auth activate-service-account --key-file ${HOME}/account-auth.json
       - run: gcloud --quiet config set project ${GOOGLE_PROJECT_ID}
       - run: gcloud --quiet config set compute/zone ${GOOGLE_COMPUTE_ZONE}
       - run: gcloud --quiet container clusters get-credentials ${GOOGLE_CLUSTER_NAME}
       - run: gcloud container clusters get-credentials ${GOOGLE_CLUSTER_NAME} \
           --zone ${GOOGLE_COMPUTE_ZONE} --project ${GOOGLE_PROJECT_ID}
       - run: gcloud docker -- push gcr.io/${GOOGLE_PROJECT_ID}/containerdemo:$CIRCLE_SHA1
-        
+
   # Deploy to GKE
 #  deploy-dev-server:
 #    docker:
