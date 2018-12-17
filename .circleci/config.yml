@@ -53,9 +53,8 @@ jobs:
       - run: gcloud --quiet container clusters get-credentials ${GOOGLE_CLUSTER_NAME}
       - run: gcloud container clusters get-credentials ${GOOGLE_CLUSTER_NAME} --zone ${GOOGLE_COMPUTE_ZONE} --project ${GOOGLE_PROJECT_ID}
       - run: gcloud docker -- push gcr.io/${GOOGLE_PROJECT_ID}/containerdemo:$CIRCLE_SHA1
-      - run: pwd
-      - run: ls
-      - run: kubectl apply -f ./kube/web-deployment.yml
+#      - run: kubectl apply -f ./kube/web-deployment.yml
+      - run: kubectl set image deployment containerdemo containerdemo=gcr.io/${GOOGLE_PROJECT_ID}/containerdemo:$CIRCLE_SHA1
 
 
 workflows:
