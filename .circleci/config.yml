@@ -56,3 +56,30 @@ jobs:
 #      - run: openrc boot
 #      - run: chmod +x ./.circleci/deploy_qa.sh   #IN THIS FILE, YOU WILL HAVE YOUR kubectl deploy logic
 #      - run: ./.circleci/deploy_qa.sh
+
+workflows:
+  version: 2
+  build:
+    jobs:
+      - build:
+          filters:
+            branches:
+              only:
+                - master
+  dev_deploy:
+    jobs:
+      - build:
+          filters:
+            branches:
+              only: master
+      - push-dev-server:
+          filters:
+            branches:
+              only: master
+      - deploy-dev-server:
+          requires:
+            - build
+            - push-dev-server
+          filters:
+            branches:
+              only: master
