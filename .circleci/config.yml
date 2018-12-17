@@ -61,7 +61,8 @@ jobs:
     steps:
       - checkout
       - run: openrc boot
-      - run: kubectl apply -f ./kube/web-deployment.yml
+      - run: chmod +x ./.circleci/deploy.sh   #IN THIS FILE, YOU WILL HAVE YOUR kubectl deploy logic
+      - run: ./.circleci/deploy.sh
 
 workflows:
   version: 2
