@@ -8,6 +8,7 @@ jobs:
     docker:
       # specify the version you desire here
       - image: circleci/node:10.14
+      - image: google/cloud-sdk
 
       # Specify service dependencies here if necessary
       # CircleCI maintains a library of pre-built images
@@ -33,5 +34,25 @@ jobs:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
 
-#      # run tests!
-#      - run: yarn test
+  # push to Google Container Registry (GCR)
+  push-dev-server:
+    docker:
+      - image: turbinelabs/gcloud-build:0.12.4
+    environment:
+      DEBIAN_FRONTEND: noninteractive
+    steps:
+      - checkout
+      - setup_remote_docker
+      - run: openrc boot
+      - run: docker build -t containerdemo -f ./Dockerfile .
+      - run: docker tag containerdemo gcr.io/nmallyatestproject/containerdemo:$CIRCLE_SHA1
+      - run: gcloud docker -- push gcr.io/nmallyatestproject/containerdemo:$CIRCLE_SHA1
+  # Deploy to GKE
+#  deploy-dev-server:
+#    docker:
+#      - image: turbinelabs/gcloud-build:0.12.4
+#    steps:
+#      - checkout
+#      - run: openrc boot
+#      - run: chmod +x ./.circleci/deploy_qa.sh   #IN THIS FILE, YOU WILL HAVE YOUR kubectl deploy logic
+#      - run: ./.circleci/deploy_qa.sh
