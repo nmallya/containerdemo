@@ -1,7 +1,7 @@
 #!/bin/bash
 
-#sudo apt-get install rng-tools -y
-#sudo rngd -r /dev/urandom
+sudo apt-get install rng-tools -y
+sudo rngd -r /dev/urandom
 
 
 GENERATED_PAYLOAD="generated_payload.json"
