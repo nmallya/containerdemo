@@ -1,6 +1,7 @@
 #!/bin/bash
 
 
+echo $BINAUTH_PRIVATE_KEY
 
 export GNUPGHOME="$(mktemp -d)"
 private_key_file="./kube/my-private-key.asc"
