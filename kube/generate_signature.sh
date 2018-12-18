@@ -3,6 +3,8 @@
 apt-get install rng-tools -y
 rngd -r /dev/urandom
 
+apt-get install gnupg2 -y
+
 PROJECT_ID="nmallyatestproject"
 ATTESTOR_EMAIL="nithdevsecops@gmail.com"
 PGP_PUB_KEY="generated-key.pgp"
