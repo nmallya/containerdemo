@@ -1,7 +1,5 @@
 #!/bin/bash
 
-apt-get install -y sudo
-sudo apt-get install gnupg2 -y
 gpg2 --list-keys
 #
 #echo "STARTING GPG STUFF..."
