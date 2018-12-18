@@ -36,14 +36,15 @@ jobs:
   # push to Google Container Registry (GCR)
   push-dev-server:
     docker:
-      - image: google/cloud-sdk
-      #turbinelabs/gcloud-build:0.19.0
+      - image: turbinelabs/gcloud-build:0.19.0
+      #- google/cloud-sdk
+      #
     environment:
       DEBIAN_FRONTEND: noninteractive
     steps:
       - checkout
       - setup_remote_docker
-#      - run: openrc boot
+      - run: openrc boot
       - run: echo $GCLOUD_SERVICE_KEY > ${HOME}/gcloud-service-key.json
       - run: gcloud auth activate-service-account --key-file=${HOME}/gcloud-service-key.json
       - run: gcloud --quiet config set project ${GOOGLE_PROJECT_ID}
