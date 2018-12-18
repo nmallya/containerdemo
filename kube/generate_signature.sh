@@ -4,8 +4,8 @@
 ATTESTOR_EMAIL="myemail@gmail.com"
 
 export GNUPGHOME="$(mktemp -d)"
-
-gpg2 --import ./my-private-key.asc
+file="./kube/my-private-key.asc"
+gpg2 --import "$file"
 gpg2 --list-secret-keys
 
 #cat >foo <<EOF
