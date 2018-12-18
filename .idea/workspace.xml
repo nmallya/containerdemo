@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b3f88e0c-c331-4e8b-b685-375d2da56ec6" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/kube/generate_signature.sh" beforeDir="false" afterPath="$PROJECT_DIR$/kube/generate_signature.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.circleci/config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.circleci/config.yml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -19,7 +19,7 @@
         <entry file="file://$PROJECT_DIR$/.circleci/config.yml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="190">
-              <caret line="48" selection-start-line="47" selection-end-line="48" />
+              <caret line="48" selection-start-line="48" selection-end-line="48" />
             </state>
           </provider>
         </entry>
@@ -54,8 +54,8 @@
         <option value="$PROJECT_DIR$/kube/web-deployment.yml" />
         <option value="$PROJECT_DIR$/kube/replace-image.sh" />
         <option value="$PROJECT_DIR$/generated-key.pgp" />
-        <option value="$PROJECT_DIR$/.circleci/config.yml" />
         <option value="$PROJECT_DIR$/kube/generate_signature.sh" />
+        <option value="$PROJECT_DIR$/.circleci/config.yml" />
       </list>
     </option>
   </component>
@@ -128,12 +128,12 @@
       <option name="presentableId" value="Default" />
       <updated>1545072160072</updated>
       <workItem from="1545072167594" duration="16021000" />
-      <workItem from="1545100386420" duration="7811000" />
+      <workItem from="1545100386420" duration="7961000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23832000" />
+    <option name="totallyTimeSpent" value="23982000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="6" y="23" width="1264" height="722" extended-state="0" />
@@ -224,7 +224,7 @@
     <entry file="file://$PROJECT_DIR$/.circleci/config.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="190">
-          <caret line="48" selection-start-line="47" selection-end-line="48" />
+          <caret line="48" selection-start-line="48" selection-end-line="48" />
         </state>
       </provider>
     </entry>

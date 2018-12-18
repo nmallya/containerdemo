@@ -45,6 +45,7 @@ jobs:
       DEBIAN_FRONTEND: noninteractive
     steps:
       - checkout
+      - run: apt-get install -y sudo
 #      - setup_remote_docker
 #      - run: openrc boot
 #      - run: docker run --privileged -d harbur/haveged:1.7c-1
