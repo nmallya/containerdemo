@@ -3,11 +3,18 @@
 signature_file="./kube/signature.pgp"
 private_key_file="./kube/my-private-key.asc"
 payload_file="./kube/generated_payload.json"
+public_key_file="./kube/public.pgp"
 
 echo -n $BINAUTH_PRIVATE_KEY | base64 -d > $private_key_file
 
 export GNUPGHOME="$(mktemp -d)"
+gpg2 --import "$public_key_file"
 gpg2 --import "$private_key_file"
+
+echo "PUBLIC KEYS"
+gpg2 --list-keys
+
+echo "PRIVATE KEYS"
 gpg2 --list-secret-keys
 
 
