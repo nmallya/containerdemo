@@ -1,7 +1,7 @@
 #!/bin/bash
 
-apt-get install rng-tools -y
-rngd -r /dev/urandom
+#apt-get install rng-tools -y
+#rngd -r /dev/urandom
 
 
 

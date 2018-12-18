@@ -46,6 +46,7 @@ jobs:
       - checkout
       - setup_remote_docker
 #      - run: openrc boot
+      - run: docker run --privileged -d harbur/haveged:1.7c-1
       - run: echo $GCLOUD_SERVICE_KEY > ${HOME}/gcloud-service-key.json
       - run: gcloud auth activate-service-account --key-file=${HOME}/gcloud-service-key.json
       - run: gcloud --quiet config set project ${GOOGLE_PROJECT_ID}
