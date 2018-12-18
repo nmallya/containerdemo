@@ -1,6 +1,7 @@
 #!/bin/bash
 
 
+ATTESTOR_EMAIL="myemail@gmail.com"
 
 export GNUPGHOME="$(mktemp -d)"
 cat >foo <<EOF
@@ -18,13 +19,12 @@ cat >foo <<EOF
      %commit
      %echo done
 EOF
-gpg2 --batch --generate-key foo
+gpg2 --batch --generate-key $ATTESTOR_EMAIL
 
 gpg2 --list-secret-keys
 #
 #echo "STARTING GPG STUFF..."
 #PROJECT_ID="nmallyatestproject"
-#ATTESTOR_EMAIL="myemail@gmail.com"
 #PGP_PUB_KEY="generated-key.pgp"
 #
 #export GPG_AGENT_INFO=${HOME}/.gnupg/S.gpg-agent:0:1
