@@ -48,6 +48,7 @@ jobs:
       - run: docker tag containerdemo gcr.io/nmallyatestproject/containerdemo:$CIRCLE_SHA1
       - run: echo $GCLOUD_SERVICE_KEY > ${HOME}/gcloud-service-key.json
       - run: gcloud auth activate-service-account --key-file=${HOME}/gcloud-service-key.json
+      - run: gcloud components install beta
       - run: gcloud --quiet config set project ${GOOGLE_PROJECT_ID}
       - run: gcloud --quiet config set compute/zone ${GOOGLE_COMPUTE_ZONE}
       - run: gcloud --quiet container clusters get-credentials ${GOOGLE_CLUSTER_NAME}
