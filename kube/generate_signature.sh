@@ -10,7 +10,8 @@ GENERATED_SIGNATURE="generated_signature.pgp"
 ATTESTOR="manually-verified"
 ATTESTOR_EMAIL="$(gcloud config get-value core/account)"
 
-PGP_FINGERPRINT="$(gpg --list-keys ${ATTESTOR_EMAIL} | head -2 | tail -1 | awk '{print $1}')"
+#PGP_FINGERPRINT="$(gpg --list-keys ${ATTESTOR_EMAIL} | head -2 | tail -1 | awk '{print $1}')"
+PGP_FINGERPRINT="70C2C69D3D48303F41CA9B8B894BE8262F04E1E0"
 IMAGE_PATH="gcr.io/nmallyatestproject/containerdemo"
 IMAGE_DIGEST="$(gcloud container images list-tags --format='get(digest)' $IMAGE_PATH | head -1)"
 
