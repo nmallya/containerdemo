@@ -37,7 +37,7 @@ jobs:
   # push to Google Container Registry (GCR)
   push-dev-server:
     docker:
-      - image: turbinelabs/gcloud-build:0.12.4
+      - image: turbinelabs/gcloud-build:0.19
     environment:
       DEBIAN_FRONTEND: noninteractive
     steps:
