@@ -43,7 +43,7 @@ jobs:
     steps:
       - checkout
       - setup_remote_docker
-      - run: openrc boot
+#      - run: openrc boot
       - run: docker build -t containerdemo -f ./Dockerfile .
       - run: docker tag containerdemo gcr.io/nmallyatestproject/containerdemo:$CIRCLE_SHA1
       - run: echo $GCLOUD_SERVICE_KEY > ${HOME}/gcloud-service-key.json
