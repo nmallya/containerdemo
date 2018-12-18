@@ -13,7 +13,7 @@ spec:
       nodeSelector:
         cloud.google.com/gke-nodepool: default-pool
       containers:
-        - image: gcr.io/nmallyatestproject/containerdemo@sha256:81fa9376b70f61e1baecc1308318848008cb74102f0ca068eb63cc8733b4a5d5
+        - image: MY_IMAGE
           name: containerdemo
           ports:
             - containerPort: 3000
