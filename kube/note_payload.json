@@ -1,8 +1,0 @@
-{
-  "name": "projects/nmallyatestproject/notes/Human-Attestor-Note",
-  "attestation_authority": {
-    "hint": {
-      "human_readable_name": "Human Attestation Note Demo"
-    }
-  }
-}

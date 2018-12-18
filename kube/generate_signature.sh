@@ -1,15 +1,15 @@
 #!/bin/bash
 
+signature_file="./kube/signature.pgp"
+private_key_file="./kube/my-private-key.asc"
+payload_file="./kube/generated_payload.json"
 
-echo $BINAUTH_PRIVATE_KEY
+echo -n $BINAUTH_PRIVATE_KEY | base64 -d > $private_key_file
 
 export GNUPGHOME="$(mktemp -d)"
-private_key_file="./kube/my-private-key.asc"
 gpg2 --import "$private_key_file"
 gpg2 --list-secret-keys
 
-signature_file="./kube/signature.pgp"
-payload_file="./kube/generated_payload.json"
 
 gpg2 \
     --local-user  attestor@example.com \
