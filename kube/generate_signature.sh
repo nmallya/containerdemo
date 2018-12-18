@@ -18,6 +18,8 @@ IMAGE_DIGEST="$(gcloud container images list-tags --format='get(digest)' $IMAGE_
 gcloud beta container binauthz create-signature-payload \
     --artifact-url="${IMAGE_PATH}@${IMAGE_DIGEST}" > ${GENERATED_PAYLOAD}
 
+cat "${GENERATED_PAYLOAD}"
+
 gpg --local-user "${ATTESTOR_EMAIL}" \
     --armor \
     --output ${GENERATED_SIGNATURE} \
