@@ -4,7 +4,7 @@
       "docker-reference": "gcr.io/nmallyatestproject/containerdemo"
     },
     "image": {
-      "docker-manifest-digest": "sha256:65addc85a9d4dbb7c10fddb8d9a1b95d0d0bb44ffb7c80b6eb802254846959d1"
+      "docker-manifest-digest": "sha256:f4d482e9e2532483bc8e45e36e0d6115bcc81a8e7b9f3cd3ac40cde659fbb7e5"
     },
     "type": "Google cloud binauthz container signature"
   }
