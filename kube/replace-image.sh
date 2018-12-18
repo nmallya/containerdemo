@@ -7,7 +7,7 @@ echo $FINAL_IMAGE
 pwd
 ls
 file="./kube/web-deployment.yml"
-sed -i '' "s|MY_IMAGE|$FINAL_IMAGE|g" "$file"
+sed -i "s|MY_IMAGE|$FINAL_IMAGE|g" "$file"
 
 
 
