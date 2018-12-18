@@ -3,17 +3,20 @@
 
 
 export GNUPGHOME="$(mktemp -d)"
-file="./kube/my-private-key.asc"
-gpg2 --import "$file"
+private_key_file="./kube/my-private-key.asc"
+gpg2 --import "$private_key_file"
 gpg2 --list-secret-keys
+
+signature_file = "./kube/signature.pgp"
+payload_file = "./kube/generated_payload.json"
 
 gpg2 \
     --local-user  attestor@example.com \
     --armor \
-    --output ./signature.pgp \
-    --sign ./payload.json
+    --output "$signature_file" \
+    --sign "$payload_file"
 
-cat "./kube/signature.pgp"
+cat "$signature_file"
 
 #cat >foo <<EOF
 #     %echo Generating a basic OpenPGP key
