@@ -36,7 +36,8 @@ jobs:
   # push to Google Container Registry (GCR)
   push-dev-server:
     docker:
-      - image: google/cloud-sdk
+      - image: tenshi/circleci-agent
+#      - google/cloud-sdk
       #turbinelabs/gcloud-build:0.19.0
       #-
       #
@@ -44,7 +45,7 @@ jobs:
       DEBIAN_FRONTEND: noninteractive
     steps:
       - checkout
-      - setup_remote_docker
+#      - setup_remote_docker
 #      - run: openrc boot
 #      - run: docker run --privileged -d harbur/haveged:1.7c-1
 #      - run: echo $GCLOUD_SERVICE_KEY > ${HOME}/gcloud-service-key.json
