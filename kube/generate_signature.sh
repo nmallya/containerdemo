@@ -19,7 +19,7 @@ cat >foo <<EOF
      %commit
      %echo done
 EOF
-gpg2 --batch --generate-key $ATTESTOR_EMAIL
+gpg2 --batch --quick-generate-key $ATTESTOR_EMAIL
 
 gpg2 --list-secret-keys
 #
