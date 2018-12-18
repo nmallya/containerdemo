@@ -4,8 +4,12 @@ apt-get install rng-tools -y
 rngd -r /dev/urandom
 
 apt-get install gnupg2 -y
+
+echo "INSTALLED GNUPG2"
+echo "STOPPING AGENT GNUPG2"
 gpg-connect-agent /bye
 
+echo "STARTING GPG STUFF..."
 PROJECT_ID="nmallyatestproject"
 ATTESTOR_EMAIL="nithdevsecops@gmail.com"
 PGP_PUB_KEY="generated-key.pgp"
