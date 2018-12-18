@@ -9,9 +9,17 @@ GENERATED_SIGNATURE="generated_signature.pgp"
 
 ATTESTOR="manually-verified"
 ATTESTOR_EMAIL="$(gcloud config get-value core/account)"
+PGP_PUB_KEY="generated-key.pgp"
 
-#PGP_FINGERPRINT="$(gpg --list-keys ${ATTESTOR_EMAIL} | head -2 | tail -1 | awk '{print $1}')"
-PGP_FINGERPRINT="70C2C69D3D48303F41CA9B8B894BE8262F04E1E0"
+gpg --quick-generate-key --yes ${ATTESTOR_EMAIL}
+gpg --armor --export "${ATTESTOR_EMAIL}" > ${PGP_PUB_KEY}
+gcloud --project="${PROJECT_ID}" \
+    beta container binauthz attestors public-keys add \
+    --attestor="${ATTESTOR}" \
+    --public-key-file="${PGP_PUB_KEY}"
+
+
+PGP_FINGERPRINT="$(gpg --list-keys ${ATTESTOR_EMAIL} | head -2 | tail -1 | awk '{print $1}')"
 IMAGE_PATH="gcr.io/nmallyatestproject/containerdemo"
 IMAGE_DIGEST="$(gcloud container images list-tags --format='get(digest)' $IMAGE_PATH | head -1)"
 
