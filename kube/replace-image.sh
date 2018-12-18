@@ -6,5 +6,8 @@ FINAL_IMAGE=$IMAGE_PATH@$IMAGE_DIGEST
 echo $FINAL_IMAGE
 pwd
 ls
-sed -i '' "s|MY_IMAGE|$FINAL_IMAGE|g" "./kube/web-deployment.yml"
+file="./kube/web-deployment.yml"
+sed -i '' "s|MY_IMAGE|$FINAL_IMAGE|g" "$file"
+
+
 
