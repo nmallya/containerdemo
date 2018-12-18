@@ -7,14 +7,14 @@ private_key_file="./kube/my-private-key.asc"
 gpg2 --import "$private_key_file"
 gpg2 --list-secret-keys
 
-signature_file = "./kube/signature.pgp"
-payload_file = "./kube/generated_payload.json"
+signature_file="./kube/signature.pgp"
+payload_file="./kube/generated_payload.json"
 
 gpg2 \
     --local-user  attestor@example.com \
     --armor \
-    --output "$signature_file" \
-    --sign "$payload_file"
+    --output $signature_file \
+    --sign $payload_file
 
 cat "$signature_file"
 
