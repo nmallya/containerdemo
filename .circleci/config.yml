@@ -50,13 +50,13 @@ jobs:
       - run: gcloud --quiet config set compute/zone ${GOOGLE_COMPUTE_ZONE}
       - run: gcloud --quiet container clusters get-credentials ${GOOGLE_CLUSTER_NAME}
       - run: gcloud container clusters get-credentials ${GOOGLE_CLUSTER_NAME} --zone ${GOOGLE_COMPUTE_ZONE} --project ${GOOGLE_PROJECT_ID}
-      - run: docker build -t containerdemo -f ./Dockerfile .
-      - run: docker tag containerdemo gcr.io/nmallyatestproject/containerdemo:$CIRCLE_SHA1
-      - run: gcloud docker -- push gcr.io/${GOOGLE_PROJECT_ID}/containerdemo:$CIRCLE_SHA1
+#      - run: docker build -t containerdemo -f ./Dockerfile .
+#      - run: docker tag containerdemo gcr.io/nmallyatestproject/containerdemo:$CIRCLE_SHA1
+#      - run: gcloud docker -- push gcr.io/${GOOGLE_PROJECT_ID}/containerdemo:$CIRCLE_SHA1
       - run: ./kube/generate_signature.sh
-      - run: ./kube/replace-image.sh
-      - run: kubectl apply -f ./kube/web-deployment.yml
-      - run: kubectl rollout status deployment/containerdemo
+#      - run: ./kube/replace-image.sh
+#      - run: kubectl apply -f ./kube/web-deployment.yml
+#      - run: kubectl rollout status deployment/containerdemo
 #      - run: kubectl delete deployment containerdemo
 
 
