@@ -1,12 +1,19 @@
 #!/bin/bash
 
 
-ATTESTOR_EMAIL="myemail@gmail.com"
 
 export GNUPGHOME="$(mktemp -d)"
 file="./kube/my-private-key.asc"
 gpg2 --import "$file"
 gpg2 --list-secret-keys
+
+gpg2 \
+    --local-user  attestor@example.com \
+    --armor \
+    --output ./signature.pgp \
+    --sign ./payload.json
+
+cat "./kube/signature.pgp"
 
 #cat >foo <<EOF
 #     %echo Generating a basic OpenPGP key
