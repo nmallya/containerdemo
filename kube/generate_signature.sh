@@ -1,15 +1,26 @@
 #!/bin/bash
 
-signature_file="./kube/signature.pgp"
-private_key_file="./kube/my-private-key.asc"
-payload_file="./kube/generated_payload.json"
-public_key_file="./kube/public.pgp"
+SIGNATURE_FILE="./kube/signature.pgp"
+PRIVATE_KEY_FILE="./kube/my-private-key.asc"
+PAYLOAD_FILE="./kube/generated_payload.json"
+PUBLIC_KEY_FILE="./kube/public.pgp"
 
-echo -n $BINAUTH_PRIVATE_KEY | base64 -d > $private_key_file
+# GET THE IMAGE DIGEST FOR THE LATEST IMAGE DEPLOYED TO GCR
+IMAGE_PATH="gcr.io/${GOOGLE_PROJECT_ID}/containerdemo"
+IMAGE_DIGEST="$(gcloud container images list-tags --format='get(digest)' $IMAGE_PATH | head -1)"
+ATTESTOR_EMAIL=nithdevsecops@gmail.com
+
+
+# CREATE THE SIGNATURE PAYLOAD JSON FILE
+gcloud beta container binauthz create-signature-payload \
+    --artifact-url="${IMAGE_PATH}@${IMAGE_DIGEST}" > ${PAYLOAD_FILE}
+
+# BASE64 DECRYPT THE PRIVATE KEY - NEEDED FOR SIGNING THE IMAGE DIGEST
+echo -n $BINAUTH_PRIVATE_KEY | base64 -d > $PRIVATE_KEY_FILE
 
 export GNUPGHOME="$(mktemp -d)"
-gpg2 --import "$public_key_file"
-gpg2 --import "$private_key_file"
+gpg2 --import "$PUBLIC_KEY_FILE"
+gpg2 --import "$PRIVATE_KEY_FILE"
 
 echo "PUBLIC KEYS"
 gpg2 --list-keys
@@ -18,44 +29,22 @@ echo "PRIVATE KEYS"
 gpg2 --list-secret-keys
 
 
+# GET THE PGP FINGERPRINT
+PGP_FINGERPRINT="$(gpg --list-keys ${ATTESTOR_EMAIL} | head -2 | tail -1 | awk '{print $1}')"
+
+# SIGN THE PAYLOAD JSON FILE
 gpg2 \
-    --local-user  attestor@example.com \
+    --local-user  $ATTESTOR_EMAIL \
     --armor \
-    --output $signature_file \
-    --sign $payload_file
+    --output $SIGNATURE_FILE \
+    --sign $PAYLOAD_FILE
 
-cat "$signature_file"
+cat "$SIGNATURE_FILE"
 
-#cat >foo <<EOF
-#     %echo Generating a basic OpenPGP key
-#     Key-Type: DSA
-#     Key-Length: 1024
-#     Subkey-Type: ELG-E
-#     Subkey-Length: 1024
-#     Name-Real: Joe Tester
-#     Name-Comment: with stupid passphrase
-#     Name-Email: joe@foo.bar
-#     Expire-Date: 0
-#     Passphrase: abc
-#     # Do a commit here, so that we can later print "done" :-)
-#     %commit
-#     %echo done
-#EOF
-#gpg2 --quick-generate-key --yes "myemail@gmail.com"
-#
-#
-#echo "STARTING GPG STUFF..."
-#PROJECT_ID="nmallyatestproject"
-#PGP_PUB_KEY="generated-key.pgp"
-#
-#export GPG_AGENT_INFO=${HOME}/.gnupg/S.gpg-agent:0:1
-#echo "gpg agent is $GPG_AGENT_INFO"
-#
-#gpg --quick-generate-key --no-tty --batch --yes ${ATTESTOR_EMAIL}
-##gpg --quick-generate-key --yes ${ATTESTOR_EMAIL}
-#gpg --armor --export "${ATTESTOR_EMAIL}" > ${PGP_PUB_KEY}
-#
-#
-#
-#
-##gpg --quick-generate-key --no-tty --batch --yes ${ATTESTOR_EMAIL}
+# SUBMIT THE ATTESTATION TO BIN AUTH
+
+gcloud beta container binauthz attestations create \
+    --artifact-url="${IMAGE_PATH}@${IMAGE_DIGEST}" \
+    --attestor="projects/${PROJECT_ID}/attestors/${ATTESTOR_ID}" \
+    --signature-file=${SIGNATURE_FILE} \
+    --pgp-key-fingerprint="${PGP_FINGERPRINT}"

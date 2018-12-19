@@ -1,0 +1,8 @@
+{
+  "name": "projects/nmallyatestproject/notes/cd-attestor-note",
+  "attestation_authority": {
+    "hint": {
+      "human_readable_name": "This note represents an attestation authority"
+    }
+  }
+}

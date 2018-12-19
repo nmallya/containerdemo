@@ -36,32 +36,35 @@ jobs:
   # push to Google Container Registry (GCR)
   push-dev-server:
     docker:
-      - image: tenshi/circleci-agent
+      - image: turbinelabs/gcloud-build:0.19.0
+      #tenshi/circleci-agent
 #      - google/cloud-sdk
-      #turbinelabs/gcloud-build:0.19.0
+      #
       #-
       #
     environment:
       DEBIAN_FRONTEND: noninteractive
     steps:
       - checkout
-#      - setup_remote_docker
-#      - run: openrc boot
-#      - run: docker run --privileged -d harbur/haveged:1.7c-1
-#      - run: echo $GCLOUD_SERVICE_KEY > ${HOME}/gcloud-service-key.json
-#      - run: gcloud auth activate-service-account --key-file=${HOME}/gcloud-service-key.json
-#      - run: gcloud --quiet config set project ${GOOGLE_PROJECT_ID}
-#      - run: gcloud --quiet config set compute/zone ${GOOGLE_COMPUTE_ZONE}
-#      - run: gcloud --quiet container clusters get-credentials ${GOOGLE_CLUSTER_NAME}
-#      - run: gcloud container clusters get-credentials ${GOOGLE_CLUSTER_NAME} --zone ${GOOGLE_COMPUTE_ZONE} --project ${GOOGLE_PROJECT_ID}
-#      - run: docker build -t containerdemo -f ./Dockerfile .
-#      - run: docker tag containerdemo gcr.io/nmallyatestproject/containerdemo:$CIRCLE_SHA1
-#      - run: gcloud docker -- push gcr.io/${GOOGLE_PROJECT_ID}/containerdemo:$CIRCLE_SHA1
+      - setup_remote_docker
+      - run: openrc boot
+      - run: echo $GCLOUD_SERVICE_KEY > ${HOME}/gcloud-service-key.json
+      - run: gcloud auth activate-service-account --key-file=${HOME}/gcloud-service-key.json
+      - run: gcloud --quiet config set project ${GOOGLE_PROJECT_ID}
+      - run: gcloud --quiet config set compute/zone ${GOOGLE_COMPUTE_ZONE}
+      - run: gcloud --quiet container clusters get-credentials ${GOOGLE_CLUSTER_NAME}
+      - run: gcloud container clusters get-credentials ${GOOGLE_CLUSTER_NAME} --zone ${GOOGLE_COMPUTE_ZONE} --project ${GOOGLE_PROJECT_ID}
+      - run: docker build -t containerdemo -f ./Dockerfile .
+      - run: docker tag containerdemo gcr.io/${GOOGLE_PROJECT_ID}/containerdemo:$CIRCLE_SHA1
+      - run: gcloud docker -- push gcr.io/${GOOGLE_PROJECT_ID}/containerdemo:$CIRCLE_SHA1
+      - run: kubectl delete deployment --all
+      - run: kubectl delete event --all
       - run: ./kube/generate_signature.sh
-#      - run: ./kube/replace-image.sh
-#      - run: kubectl apply -f ./kube/web-deployment.yml
-#      - run: kubectl rollout status deployment/containerdemo
-#      - run: kubectl delete deployment containerdemo
+      - run: ./kube/replace-image.sh
+      - run: kubectl apply -f ./kube/web-deployment.yml
+      - run: kubectl get event
+      - run: kubectl rollout status deployment/containerdemo
+      - run: kubectl delete deployment containerdemo
 
 
 workflows:
