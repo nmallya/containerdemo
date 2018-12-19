@@ -9,7 +9,7 @@ PUBLIC_KEY_FILE="./kube/public.pgp"
 IMAGE_PATH="gcr.io/${GOOGLE_PROJECT_ID}/containerdemo"
 IMAGE_DIGEST="$(gcloud container images list-tags --format='get(digest)' $IMAGE_PATH | head -1)"
 ATTESTOR_EMAIL=nithdevsecops@gmail.com
-
+ATTESTOR_ID=cd-attestor
 
 # CREATE THE SIGNATURE PAYLOAD JSON FILE
 gcloud beta container binauthz create-signature-payload \
@@ -43,6 +43,6 @@ cat "$SIGNATURE_FILE"
 
 gcloud beta container binauthz attestations create \
     --artifact-url="${IMAGE_PATH}@${IMAGE_DIGEST}" \
-    --attestor="projects/${PROJECT_ID}/attestors/${ATTESTOR_ID}" \
+    --attestor="projects/${GOOGLE_PROJECT_ID}/attestors/${ATTESTOR_ID}" \
     --signature-file=${SIGNATURE_FILE} \
     --pgp-key-fingerprint="${PGP_FINGERPRINT}"

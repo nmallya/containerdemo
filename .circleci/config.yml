@@ -56,9 +56,9 @@ jobs:
       - run: gcloud --quiet container clusters get-credentials ${GOOGLE_CLUSTER_NAME}
       - run: gcloud container clusters get-credentials ${GOOGLE_CLUSTER_NAME} --zone ${GOOGLE_COMPUTE_ZONE} --project ${GOOGLE_PROJECT_ID}
       - run: gcloud components update
-      - run: docker build -t containerdemo -f ./Dockerfile .
-      - run: docker tag containerdemo gcr.io/${GOOGLE_PROJECT_ID}/containerdemo:$CIRCLE_SHA1
-      - run: gcloud docker -- push gcr.io/${GOOGLE_PROJECT_ID}/containerdemo:$CIRCLE_SHA1
+#      - run: docker build -t containerdemo -f ./Dockerfile .
+#      - run: docker tag containerdemo gcr.io/${GOOGLE_PROJECT_ID}/containerdemo:$CIRCLE_SHA1
+#      - run: gcloud docker -- push gcr.io/${GOOGLE_PROJECT_ID}/containerdemo:$CIRCLE_SHA1
       - run: kubectl delete deployment --all
       - run: kubectl delete event --all
       - run: ./kube/generate_signature.sh
