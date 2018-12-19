@@ -1,8 +1,10 @@
 #!/usr/bin/env bash
 
+ATTESTOR_EMAIL=nithdevsecops@gmail.com
+
 # RUN THIS ON THE MACHINE WHERE YOU GENERATED THE PGP KEY PAIR
 # show secret key
-gpg2 --list-secret-keys
+gpg --list-secret-keys
 #sample output below
 #/Users/nithinmallya/.gnupg/pubring.kbx
 #--------------------------------------
@@ -11,8 +13,10 @@ gpg2 --list-secret-keys
 #uid           [ultimate] nithindevsecops@gmail.com
 #ssb   rsa2048 2018-12-19 [E]
 
+PGP_FINGERPRINT="$(gpg --list-keys ${ATTESTOR_EMAIL} | head -2 | tail -1 | awk '{print $1}')"
+echo $PGP_FINGERPRINT
 # copy the id from the above command and use it extract the key into a file
-gpg2 --export-secret-keys 2F9B955A09D31711F5EA77A7095551B4B03789FB > my-private-key.asc
+gpg --export-secret-keys ${PGP_FINGERPRINT} > my-private-key.asc
 
 # base64 encode the key value
 base64 -i ./my-private-key.asc -o ./my-base64-private-key.asc
