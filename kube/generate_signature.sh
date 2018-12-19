@@ -4,16 +4,22 @@ SIGNATURE_FILE="./kube/signature.pgp"
 PRIVATE_KEY_FILE="./kube/my-private-key.asc"
 PAYLOAD_FILE="./kube/generated_payload.json"
 PUBLIC_KEY_FILE="./kube/public.pgp"
+GOOGLE_PROJECT_ID="nmallyatestproject"
 
 # GET THE IMAGE DIGEST FOR THE LATEST IMAGE DEPLOYED TO GCR
 IMAGE_PATH="gcr.io/${GOOGLE_PROJECT_ID}/containerdemo"
 IMAGE_DIGEST="$(gcloud container images list-tags --format='get(digest)' $IMAGE_PATH | head -1)"
+FINAL_IMAGE=$IMAGE_PATH@$IMAGE_DIGEST
+echo $FINAL_IMAGE
+
 ATTESTOR_EMAIL=nithdevsecops@gmail.com
 ATTESTOR_ID=cd-attestor
 
 # CREATE THE SIGNATURE PAYLOAD JSON FILE
-gcloud beta container binauthz create-signature-payload \
-    --artifact-url="${IMAGE_PATH}@${IMAGE_DIGEST}" > ${PAYLOAD_FILE}
+
+gcloud beta container binauthz create-signature-payload --artifact-url="${FINAL_IMAGE}" > ${PAYLOAD_FILE}
+cat "${PAYLOAD_FILE}"
+
 
 # BASE64 DECRYPT THE PRIVATE KEY - NEEDED FOR SIGNING THE IMAGE DIGEST
 echo -n $BINAUTH_PRIVATE_KEY | base64 -d > $PRIVATE_KEY_FILE
@@ -35,14 +41,18 @@ PGP_FINGERPRINT="$(gpg2 --list-keys ${ATTESTOR_EMAIL} | sed -n '2p')"
 echo "PGP FINGERPRINT IS $PGP_FINGERPRINT"
 
 # SIGN THE PAYLOAD JSON FILE
-gpg2 --local-user  $ATTESTOR_EMAIL --armor --output $SIGNATURE_FILE --sign $PAYLOAD_FILE
+gpg2 --local-user $ATTESTOR_EMAIL --armor --output $SIGNATURE_FILE --sign $PAYLOAD_FILE
 
 cat "$SIGNATURE_FILE"
 
 # SUBMIT THE ATTESTATION TO BIN AUTH
 
 gcloud beta container binauthz attestations create \
-    --artifact-url="${IMAGE_PATH}@${IMAGE_DIGEST}" \
+    --artifact-url="${FINAL_IMAGE}" \
     --attestor="projects/${GOOGLE_PROJECT_ID}/attestors/${ATTESTOR_ID}" \
-    --signature-file=${SIGNATURE_FILE} \
+    --signature-file="${SIGNATURE_FILE}" \
     --pgp-key-fingerprint="${PGP_FINGERPRINT}"
+
+
+gcloud beta container binauthz attestations list \
+    --attestor="projects/${GOOGLE_PROJECT_ID}/attestors/${ATTESTOR_ID}"
