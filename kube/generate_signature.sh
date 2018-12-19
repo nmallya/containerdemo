@@ -30,7 +30,7 @@ gpg2 --list-secret-keys
 
 
 # GET THE PGP FINGERPRINT
-PGP_FINGERPRINT="$(gpg --list-keys ${ATTESTOR_EMAIL} | head -2 | tail -1 | awk '{print $1}')"
+PGP_FINGERPRINT="$(gpg2 --list-keys ${ATTESTOR_EMAIL} | head -2 | tail -1 | awk '{print $1}')"
 
 # SIGN THE PAYLOAD JSON FILE
 gpg2 \

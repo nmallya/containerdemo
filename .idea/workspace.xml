@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b3f88e0c-c331-4e8b-b685-375d2da56ec6" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.circleci/config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.circleci/config.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kube/generate_signature.sh" beforeDir="false" afterPath="$PROJECT_DIR$/kube/generate_signature.sh" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -15,20 +15,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.circleci/config.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="413">
+            <state relative-caret-position="279">
               <caret line="57" column="37" selection-start-line="57" selection-start-column="37" selection-end-line="57" selection-end-column="37" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/kube/generate_signature.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="500">
-              <caret line="48" column="37" selection-start-line="48" selection-start-column="23" selection-end-line="48" selection-end-column="37" />
+            <state relative-caret-position="488">
+              <caret line="37" column="13" lean-forward="true" selection-start-line="37" selection-start-column="13" selection-end-line="37" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -67,8 +67,8 @@
         <option value="$PROJECT_DIR$/kube/extract_private_key.sh" />
         <option value="$PROJECT_DIR$/kube/otherhelpfulfiles/extract_private_key.sh" />
         <option value="$PROJECT_DIR$/kube/replace-image.sh" />
-        <option value="$PROJECT_DIR$/kube/generate_signature.sh" />
         <option value="$PROJECT_DIR$/.circleci/config.yml" />
+        <option value="$PROJECT_DIR$/kube/generate_signature.sh" />
       </list>
     </option>
   </component>
@@ -151,12 +151,12 @@
       <option name="presentableId" value="Default" />
       <updated>1545072160072</updated>
       <workItem from="1545072167594" duration="16021000" />
-      <workItem from="1545100386420" duration="18265000" />
+      <workItem from="1545100386420" duration="18714000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="34286000" />
+    <option name="totallyTimeSpent" value="34735000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="6" y="23" width="1264" height="722" extended-state="0" />
@@ -294,17 +294,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/kube/generate_signature.sh">
+    <entry file="file://$PROJECT_DIR$/.circleci/config.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="500">
-          <caret line="48" column="37" selection-start-line="48" selection-start-column="23" selection-end-line="48" selection-end-column="37" />
+        <state relative-caret-position="279">
+          <caret line="57" column="37" selection-start-line="57" selection-start-column="37" selection-end-line="57" selection-end-column="37" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.circleci/config.yml">
+    <entry file="file://$PROJECT_DIR$/kube/generate_signature.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="413">
-          <caret line="57" column="37" selection-start-line="57" selection-start-column="37" selection-end-line="57" selection-end-column="37" />
+        <state relative-caret-position="488">
+          <caret line="37" column="13" lean-forward="true" selection-start-line="37" selection-start-column="13" selection-end-line="37" selection-end-column="13" />
         </state>
       </provider>
     </entry>
