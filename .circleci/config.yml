@@ -36,8 +36,9 @@ jobs:
   # push to Google Container Registry (GCR)
   push-dev-server:
     docker:
-      - image: turbinelabs/gcloud-build:0.19.0
-      #tenshi/circleci-agent
+      - image: tenshi/circleci-agent
+      #turbinelabs/gcloud-build:0.19.0
+      #
 #      - google/cloud-sdk
       #
       #-

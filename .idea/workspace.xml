@@ -2,19 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b3f88e0c-c331-4e8b-b685-375d2da56ec6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/kube/extract_private_key.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/kube/manual_steps.sh" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.circleci/config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.circleci/config.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kube/eb-deployment.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/kube/generate_signature.sh" beforeDir="false" afterPath="$PROJECT_DIR$/kube/generate_signature.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kube/generated-key.pgp" beforeDir="false" afterPath="$PROJECT_DIR$/kube/deletelater/generated-key.pgp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kube/generated_payload.json" beforeDir="false" afterPath="$PROJECT_DIR$/kube/deletelater/generated_payload.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kube/generated_signature.pgp" beforeDir="false" afterPath="$PROJECT_DIR$/kube/deletelater/generated_signature.pgp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kube/gensig2.sh" beforeDir="false" afterPath="$PROJECT_DIR$/kube/deletelater/gensig2.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kube/public.pgp" beforeDir="false" afterPath="$PROJECT_DIR$/kube/public.pgp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kube/replace-image.sh" beforeDir="false" afterPath="$PROJECT_DIR$/kube/replace-image.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kube/sign-image-metadata.sh" beforeDir="false" afterPath="$PROJECT_DIR$/kube/deletelater/sign-image-metadata.sh" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -27,16 +15,16 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/.circleci/config.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="495">
-              <caret line="64" column="30" selection-start-line="64" selection-start-column="30" selection-end-line="64" selection-end-column="30" />
+            <state relative-caret-position="128">
+              <caret line="38" column="36" selection-start-line="38" selection-start-column="36" selection-end-line="38" selection-end-column="36" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/kube/generate_signature.sh">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="500">
@@ -79,8 +67,8 @@
         <option value="$PROJECT_DIR$/kube/extract_private_key.sh" />
         <option value="$PROJECT_DIR$/kube/otherhelpfulfiles/extract_private_key.sh" />
         <option value="$PROJECT_DIR$/kube/replace-image.sh" />
-        <option value="$PROJECT_DIR$/.circleci/config.yml" />
         <option value="$PROJECT_DIR$/kube/generate_signature.sh" />
+        <option value="$PROJECT_DIR$/.circleci/config.yml" />
       </list>
     </option>
   </component>
@@ -163,12 +151,12 @@
       <option name="presentableId" value="Default" />
       <updated>1545072160072</updated>
       <workItem from="1545072167594" duration="16021000" />
-      <workItem from="1545100386420" duration="17895000" />
+      <workItem from="1545100386420" duration="18123000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="33916000" />
+    <option name="totallyTimeSpent" value="34144000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="6" y="23" width="1264" height="722" extended-state="0" />
@@ -299,13 +287,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.circleci/config.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="64" column="30" selection-start-line="64" selection-start-column="30" selection-end-line="64" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/kube/deletelater/sign-image-metadata.sh">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
@@ -317,6 +298,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="500">
           <caret line="48" column="37" selection-start-line="48" selection-start-column="23" selection-end-line="48" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.circleci/config.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="128">
+          <caret line="38" column="36" selection-start-line="38" selection-start-column="36" selection-end-line="38" selection-end-column="36" />
         </state>
       </provider>
     </entry>
