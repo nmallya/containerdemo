@@ -29,8 +29,9 @@ echo "PRIVATE KEYS"
 gpg2 --list-secret-keys
 
 
-# GET THE PGP FINGERPRINT
-PGP_FINGERPRINT="$(gpg2 --list-keys ${ATTESTOR_EMAIL} | head -2 | tail -1 | awk '{print $1}')"
+echo "GET THE PGP FINGERPRINT"
+PGP_FINGERPRINT="$(gpg2 --list-keys ${ATTESTOR_EMAIL} | sed -n '2p')"
+echo "PGP FINGERPRINT IS $PGP_FINGERPRINT"
 
 # SIGN THE PAYLOAD JSON FILE
 gpg2 \
