@@ -3,6 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="b3f88e0c-c331-4e8b-b685-375d2da56ec6" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/kube/generate_signature.sh" beforeDir="false" afterPath="$PROJECT_DIR$/kube/generate_signature.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kube/manual_steps.sh" beforeDir="false" afterPath="$PROJECT_DIR$/kube/manual_steps.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kube/public.pgp" beforeDir="false" afterPath="$PROJECT_DIR$/kube/public.pgp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -27,8 +29,17 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/kube/generate_signature.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="245">
-              <caret line="33" column="1" selection-start-line="33" selection-start-column="1" selection-end-line="33" selection-end-column="1" />
+            <state relative-caret-position="321">
+              <caret line="32" column="67" lean-forward="true" selection-start-line="32" selection-start-column="19" selection-end-line="32" selection-end-column="67" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/kube/manual_steps.sh">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="230">
+              <caret line="42" column="44" selection-start-line="42" selection-start-column="44" selection-end-line="42" selection-end-column="44" />
             </state>
           </provider>
         </entry>
@@ -36,8 +47,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/kube/extract_private_key.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="31" selection-start-line="2" selection-start-column="31" selection-end-line="2" selection-end-column="31" />
+            <state relative-caret-position="300">
+              <caret line="20" column="67" selection-start-line="20" selection-start-column="67" selection-end-line="20" selection-end-column="67" />
             </state>
           </provider>
         </entry>
@@ -47,6 +58,7 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>cluster</find>
+      <find>IAM_REQUEST_JSON</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -63,11 +75,11 @@
         <option value="$PROJECT_DIR$/kube/web-deployment.yml" />
         <option value="$PROJECT_DIR$/generated-key.pgp" />
         <option value="$PROJECT_DIR$/kube/gensig2.sh" />
-        <option value="$PROJECT_DIR$/kube/manual_steps.sh" />
         <option value="$PROJECT_DIR$/kube/extract_private_key.sh" />
         <option value="$PROJECT_DIR$/kube/otherhelpfulfiles/extract_private_key.sh" />
         <option value="$PROJECT_DIR$/kube/replace-image.sh" />
         <option value="$PROJECT_DIR$/.circleci/config.yml" />
+        <option value="$PROJECT_DIR$/kube/manual_steps.sh" />
         <option value="$PROJECT_DIR$/kube/generate_signature.sh" />
       </list>
     </option>
@@ -102,12 +114,6 @@
               <item name="DemoApp" type="b2602c69:ProjectViewProjectNode" />
               <item name="DemoApp" type="462c0819:PsiDirectoryNode" />
               <item name="kube" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="DemoApp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="DemoApp" type="462c0819:PsiDirectoryNode" />
-              <item name="kube" type="462c0819:PsiDirectoryNode" />
-              <item name="deletelater" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -157,12 +163,12 @@
       <option name="presentableId" value="Default" />
       <updated>1545072160072</updated>
       <workItem from="1545072167594" duration="16021000" />
-      <workItem from="1545100386420" duration="19140000" />
+      <workItem from="1545100386420" duration="19853000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="35161000" />
+    <option name="totallyTimeSpent" value="35874000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="6" y="23" width="1264" height="722" extended-state="0" />
@@ -247,13 +253,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/kube/manual_steps.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-370">
-          <caret line="2" column="36" selection-start-line="2" selection-start-column="36" selection-end-line="2" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/kube/replace-image.sh">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -283,16 +282,6 @@
     <entry file="file://$PROJECT_DIR$/kube/deletelater/generated_signature.pgp">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/kube/public.pgp">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/kube/extract_private_key.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="31" selection-start-line="2" selection-start-column="31" selection-end-line="2" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.circleci/config.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="279">
@@ -302,15 +291,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/kube/deletelater/sign-image-metadata.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="19" selection-start-line="14" selection-start-column="19" selection-end-line="14" selection-end-column="19" />
+        <state relative-caret-position="285">
+          <caret line="19" column="13" lean-forward="true" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/kube/public.pgp">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/kube/manual_steps.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="42" column="44" selection-start-line="42" selection-start-column="44" selection-end-line="42" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/kube/extract_private_key.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="20" column="67" selection-start-line="20" selection-start-column="67" selection-end-line="20" selection-end-column="67" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/kube/generate_signature.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="245">
-          <caret line="33" column="1" selection-start-line="33" selection-start-column="1" selection-end-line="33" selection-end-column="1" />
+        <state relative-caret-position="321">
+          <caret line="32" column="67" lean-forward="true" selection-start-line="32" selection-start-column="19" selection-end-line="32" selection-end-column="67" />
         </state>
       </provider>
     </entry>

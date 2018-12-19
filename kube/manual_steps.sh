@@ -38,7 +38,7 @@ curl -vvv  \
 
 # CREATE AND PERSIST ATTESTOR ---------------------------------------------------  BEGIN
 ATTESTOR_ID=cd-attestor
-ATTESTOR_EMAIL=nithindevsecops@gmail.com
+ATTESTOR_EMAIL=nithdevsecops@gmail.com
 
 gcloud beta container binauthz attestors create $ATTESTOR_ID \
     --attestation-authority-note=$NOTE_ID \

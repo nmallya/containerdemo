@@ -30,16 +30,12 @@ gpg2 --list-secret-keys
 
 
 echo "GET THE PGP FINGERPRINT"
-PGP_FINGERPRINT="2F9B955A09D31711F5EA77A7095551B4B03789FB"
+PGP_FINGERPRINT="$(gpg2 --list-keys ${ATTESTOR_EMAIL} | sed -n '2p')"
 #"$(gpg2 --list-keys ${ATTESTOR_EMAIL} | sed -n '2p')"
 echo "PGP FINGERPRINT IS $PGP_FINGERPRINT"
 
 # SIGN THE PAYLOAD JSON FILE
-gpg2 \
-    --local-user  $ATTESTOR_EMAIL \
-    --armor \
-    --output $SIGNATURE_FILE \
-    --sign $PAYLOAD_FILE
+gpg2 --local-user  $ATTESTOR_EMAIL --armor --output $SIGNATURE_FILE --sign $PAYLOAD_FILE
 
 cat "$SIGNATURE_FILE"
 
