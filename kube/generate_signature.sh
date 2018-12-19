@@ -56,3 +56,4 @@ gcloud beta container binauthz attestations create \
 
 gcloud beta container binauthz attestations list \
     --attestor="projects/${GOOGLE_PROJECT_ID}/attestors/${ATTESTOR_ID}"
+

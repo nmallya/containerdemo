@@ -11,6 +11,7 @@ gcloud services enable binaryauthorization.googleapis.com
 PROJECT_ID=nmallyatestproject
 NOTE_ID=cd-attestor-note
 
+
 cat > ./create_note_request.json << EOM
 {
   "name": "projects/${PROJECT_ID}/notes/${NOTE_ID}",
@@ -48,6 +49,38 @@ gcloud beta container binauthz attestors create $ATTESTOR_ID \
 gcloud beta container binauthz attestors list
 
 # CREATE AND PERSIST ATTESTOR ---------------------------------------------------  END
+
+
+
+# GIVE IAM ACCESS ----------------------------------------- BEGIN
+PROJECT_NUMBER=$(gcloud projects describe "${PROJECT_ID}"  --format="value(projectNumber)")
+BINAUTHZ_SA_EMAIL="service-${PROJECT_NUMBER}@gcp-sa-binaryauthorization.iam.gserviceaccount.com"
+
+
+cat > ./iam_request.json << EOM
+{
+  'resource': 'projects/$PROJECT_ID/notes/$NOTE_ID',
+  'policy': {
+    'bindings': [
+      {
+        'role': 'roles/containeranalysis.notes.occurrences.viewer',
+        'members': [
+          'serviceAccount:$BINAUTHZ_SA_EMAIL'
+        ]
+      }
+    ]
+  }
+}
+EOM
+
+curl -X POST  \
+    -H "Content-Type: application/json" \
+    -H "Authorization: Bearer $(gcloud auth print-access-token)" \
+    --data-binary @./iam_request.json \
+    "https://containeranalysis.googleapis.com/v1alpha1/projects/$PROJECT_ID/notes/$NOTE_ID:setIamPolicy"
+
+# GIVE IAM ACCESS ----------------------------------------- END
+
 
 # GENERATE PGP KEY ---------------------------- BEGIN
 gpg2 --quick-generate-key --yes ${ATTESTOR_EMAIL}
