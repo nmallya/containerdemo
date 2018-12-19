@@ -1,0 +1,15 @@
+name: projects/nmallyatestproject/policy
+admissionWhitelistPatterns:
+  - namePattern: gcr.io/google_containers/*
+  - namePattern: gcr.io/google-containers/*
+  - namePattern: k8s.gcr.io/*
+  - namePattern: gcr.io/stackdriver-agents/*
+defaultAdmissionRule:
+  evaluationMode: ALWAYS_ALLOW
+  enforcementMode: ENFORCED_BLOCK_AND_AUDIT_LOG
+clusterAdmissionRules:
+  us-central1-b.cd-cluster:
+    evaluationMode: REQUIRE_ATTESTATION
+    enforcementMode: ENFORCED_BLOCK_AND_AUDIT_LOG
+    requireAttestationsBy:
+      - projects/nmallyatestproject/attestors/manually-verified

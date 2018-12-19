@@ -2,9 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b3f88e0c-c331-4e8b-b685-375d2da56ec6" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/kube/deletelater/setup.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kube/sec-policy.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kube/setupdemo.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kube/setupdemobackup.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kube/web-deployment2.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.circleci/config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.circleci/config.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/kube/generate_signature.sh" beforeDir="false" afterPath="$PROJECT_DIR$/kube/generate_signature.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kube/manual_steps.sh" beforeDir="false" afterPath="$PROJECT_DIR$/kube/manual_steps.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/somefile.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/kube/manual_steps.sh" beforeDir="false" afterPath="$PROJECT_DIR$/kube/deletelater/manual_steps.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kube/public.pgp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/kube/web-deployment.yml" beforeDir="false" afterPath="$PROJECT_DIR$/kube/web-deployment.yml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -16,13 +24,39 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.circleci/config.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="456">
+              <caret line="72" column="12" lean-forward="true" selection-start-line="72" selection-start-column="12" selection-end-line="72" selection-end-column="12" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/kube/setupdemo.sh">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1379">
+              <caret line="134" column="16" lean-forward="true" selection-start-line="134" selection-start-column="16" selection-end-line="134" selection-end-column="16" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
       <find>cluster</find>
       <find>IAM_REQUEST_JSON</find>
       <find>request</find>
+      <find>gpg</find>
+      <find>- run:</find>
+      <find>/tmp</find>
+      <find>test-att</find>
+      <find>policy</find>
+      <find>GENERATED_SIGNATURE</find>
+      <find>nginx</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -33,18 +67,21 @@
       <list>
         <option value="$PROJECT_DIR$/Dockerfile" />
         <option value="$PROJECT_DIR$/.circleci/deploy.sh" />
-        <option value="$PROJECT_DIR$/kube/setup.sh" />
         <option value="$PROJECT_DIR$/kube/sign-image-metadata.sh" />
         <option value="$PROJECT_DIR$/kube/onetime-setup.sh" />
         <option value="$PROJECT_DIR$/generated-key.pgp" />
         <option value="$PROJECT_DIR$/kube/gensig2.sh" />
         <option value="$PROJECT_DIR$/kube/extract_private_key.sh" />
         <option value="$PROJECT_DIR$/kube/otherhelpfulfiles/extract_private_key.sh" />
-        <option value="$PROJECT_DIR$/kube/web-deployment.yml" />
-        <option value="$PROJECT_DIR$/.circleci/config.yml" />
         <option value="$PROJECT_DIR$/kube/replace-image.sh" />
         <option value="$PROJECT_DIR$/kube/generate_signature.sh" />
         <option value="$PROJECT_DIR$/kube/manual_steps.sh" />
+        <option value="$PROJECT_DIR$/kube/web-deployment.yml" />
+        <option value="$PROJECT_DIR$/kube/web-deployment2.yml" />
+        <option value="$PROJECT_DIR$/kube/setup.sh" />
+        <option value="$PROJECT_DIR$/kube/sec-policy.yml" />
+        <option value="$PROJECT_DIR$/.circleci/config.yml" />
+        <option value="$PROJECT_DIR$/kube/setupdemo.sh" />
       </list>
     </option>
   </component>
@@ -127,15 +164,16 @@
       <option name="presentableId" value="Default" />
       <updated>1545072160072</updated>
       <workItem from="1545072167594" duration="16021000" />
-      <workItem from="1545100386420" duration="23265000" />
+      <workItem from="1545100386420" duration="38540000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="39286000" />
+    <option name="totallyTimeSpent" value="54561000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="6" y="23" width="1264" height="722" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2164119" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -202,13 +240,6 @@
     <entry file="file://$PROJECT_DIR$/kube/eb-deployment.yml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/kube/deletelater/gensig2.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/kube/deletelater/create_note_request.json">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -241,16 +272,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/kube/deletelater/sign-image-metadata.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="13" lean-forward="true" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/kube/public.pgp">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/kube/replace-image.sh">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
@@ -258,31 +279,106 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/kube/web-deployment.yml">
+    <entry file="file://$PROJECT_DIR$/kube/public.pgp">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/kube/public.pgp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
-          <caret line="15" column="25" selection-start-line="15" selection-start-column="25" selection-end-line="15" selection-end-column="25" />
+          <caret line="15" column="64" lean-forward="true" selection-start-line="15" selection-start-column="64" selection-end-line="15" selection-end-column="64" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/kube/manual_steps.sh">
+    <entry file="file://$PROJECT_DIR$/kube/generated_signature.pgp">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/kube/generated_payload.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/kube/generated-key.pgp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="81" column="63" selection-start-line="81" selection-start-column="63" selection-end-line="81" selection-end-column="63" />
+        <state relative-caret-position="240">
+          <caret line="16" column="5" lean-forward="true" selection-end-line="18" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/kube/generate_signature.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="515">
-          <caret line="59" lean-forward="true" selection-start-line="59" selection-end-line="59" />
+        <state relative-caret-position="405">
+          <caret line="27" column="33" lean-forward="true" selection-start-line="27" selection-start-column="33" selection-end-line="27" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/kube/web-deployment.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="17" lean-forward="true" selection-start-line="15" selection-start-column="17" selection-end-line="15" selection-end-column="128" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/kube/sec-policy.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="33" selection-start-column="33" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/kube/deletelater/sign-image-metadata.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="20" column="37" lean-forward="true" selection-start-line="20" selection-start-column="37" selection-end-line="20" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/kube/deletelater/gensig2.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" selection-start-line="3" selection-end-line="3" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cleanup.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" lean-forward="true" selection-end-line="2" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/.circleci/config.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
-          <caret line="46" column="26" lean-forward="true" selection-start-line="46" selection-start-column="26" selection-end-line="46" selection-end-column="26" />
+        <state relative-caret-position="456">
+          <caret line="72" column="12" lean-forward="true" selection-start-line="72" selection-start-column="12" selection-end-line="72" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/kube/deletelater/manual_steps.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="395">
+          <caret line="86" lean-forward="true" selection-start-line="85" selection-end-line="86" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/kube/deletelater/setup.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="235">
+          <caret line="71" lean-forward="true" selection-start-line="70" selection-end-line="71" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/kube/web-deployment2.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="29" lean-forward="true" selection-start-line="9" selection-start-column="29" selection-end-line="9" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/kube/setupdemobackup.sh">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/kube/setupdemo.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1379">
+          <caret line="134" column="16" lean-forward="true" selection-start-line="134" selection-start-column="16" selection-end-line="134" selection-end-column="16" />
         </state>
       </provider>
     </entry>

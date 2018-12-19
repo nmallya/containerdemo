@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: containerdemo
+spec:
+  containers:
+    - name: containerdemo
+      image: gcr.io/nmallyatestproject/containerdemo@sha256:9377cca4acfc6cba46ec83c76f5560ad2e034aa239aff6343582529dfcc687ab
+      ports:
+        - containerPort: 3000

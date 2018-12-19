@@ -22,11 +22,11 @@ cat "${PAYLOAD_FILE}"
 
 
 # BASE64 DECRYPT THE PRIVATE KEY - NEEDED FOR SIGNING THE IMAGE DIGEST
-echo -n $BINAUTH_PRIVATE_KEY | base64 -d > $PRIVATE_KEY_FILE
+#echo -n $BINAUTH_PRIVATE_KEY | base64 -D > $PRIVATE_KEY_FILE
 
-export GNUPGHOME="$(mktemp -d)"
-gpg2 --import "$PUBLIC_KEY_FILE"
-gpg2 --import "$PRIVATE_KEY_FILE"
+#export GNUPGHOME="$(mktemp -d)"
+#gpg2 --import "$PUBLIC_KEY_FILE"
+#gpg2 --import "$PRIVATE_KEY_FILE"
 
 echo "PUBLIC KEYS"
 gpg2 --list-keys
@@ -37,7 +37,6 @@ gpg2 --list-secret-keys
 
 echo "GET THE PGP FINGERPRINT"
 PGP_FINGERPRINT="$(gpg2 --list-keys ${ATTESTOR_EMAIL} | sed -n '2p')"
-#"$(gpg2 --list-keys ${ATTESTOR_EMAIL} | sed -n '2p')"
 echo "PGP FINGERPRINT IS $PGP_FINGERPRINT"
 
 # SIGN THE PAYLOAD JSON FILE
