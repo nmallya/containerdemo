@@ -2,7 +2,7 @@
 
 PROJECT_ID=nmallyatestproject
 ATTESTOR="manually-verified" # No spaces allowed
-ATTESTOR_EMAIL="$(gcloud config get-value core/account)" # This uses your current user/email
+ATTESTOR_EMAIL=nithdevsecops@gmail.com # This uses your current user/email
 GENERATED_PAYLOAD="generated_payload.json"
 GENERATED_SIGNATURE="generated_signature.pgp"
 PRIVATE_KEY_FILE="./kube/my-private-key.asc"
