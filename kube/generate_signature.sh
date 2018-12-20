@@ -73,3 +73,4 @@ EOF
 
 #kubectl rollout status deployment/nginx
 kubectl get pods
+
