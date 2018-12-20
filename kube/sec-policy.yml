@@ -12,4 +12,4 @@ clusterAdmissionRules:
     evaluationMode: REQUIRE_ATTESTATION
     enforcementMode: ENFORCED_BLOCK_AND_AUDIT_LOG
     requireAttestationsBy:
-      - projects/nmallyatestproject/attestors/manually-verified
+      - projects/nmallyatestproject/attestors/binauth-attestor
