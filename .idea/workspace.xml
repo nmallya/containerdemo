@@ -2,17 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b3f88e0c-c331-4e8b-b685-375d2da56ec6" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kube/extract_private_key.sh" beforeDir="false" afterPath="$PROJECT_DIR$/kube/extract_private_key.sh" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/kube/generate_signature.sh" beforeDir="false" afterPath="$PROJECT_DIR$/kube/generate_signature.sh" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/kube/generated-key.pgp" beforeDir="false" afterPath="$PROJECT_DIR$/kube/generated-key.pgp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kube/generated_payload.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/kube/generated_signature.pgp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/kube/note_payload.json" beforeDir="false" afterPath="$PROJECT_DIR$/kube/note_payload.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kube/replace-image.sh" beforeDir="false" afterPath="$PROJECT_DIR$/kube/deletelater/replace-image.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kube/sec-policy.yml" beforeDir="false" afterPath="$PROJECT_DIR$/kube/sec-policy.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kube/setupdemo.sh" beforeDir="false" afterPath="$PROJECT_DIR$/kube/onetime_setup.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kube/web-deployment.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/kube/web-deployment2.yml" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -25,11 +17,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/kube/generate_signature.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="722">
-              <caret line="50" column="24" lean-forward="true" selection-start-line="50" selection-start-column="24" selection-end-line="50" selection-end-column="24" />
+            <state relative-caret-position="210">
+              <caret line="14" column="57" lean-forward="true" selection-start-line="14" selection-start-column="57" selection-end-line="14" selection-end-column="57" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/kube/extract_private_key.sh">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="210">
+              <caret line="14" column="67" lean-forward="true" selection-start-line="14" selection-start-column="37" selection-end-line="14" selection-end-column="67" />
             </state>
           </provider>
         </entry>
@@ -51,6 +52,7 @@
       <find>ATTESTOR_NAME</find>
       <find>human</find>
       <find>policy</find>
+      <find>./kube/</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -72,11 +74,11 @@
         <option value="$PROJECT_DIR$/kube/web-deployment2.yml" />
         <option value="$PROJECT_DIR$/kube/setup.sh" />
         <option value="$PROJECT_DIR$/kube/setupdemo.sh" />
-        <option value="$PROJECT_DIR$/kube/extract_private_key.sh" />
         <option value="$PROJECT_DIR$/kube/generate_signaturebackup.sh" />
         <option value="$PROJECT_DIR$/.circleci/config.yml" />
         <option value="$PROJECT_DIR$/kube/sec-policy.yml" />
         <option value="$PROJECT_DIR$/kube/onetime_setup.sh" />
+        <option value="$PROJECT_DIR$/kube/extract_private_key.sh" />
         <option value="$PROJECT_DIR$/kube/generate_signature.sh" />
       </list>
     </option>
@@ -160,12 +162,12 @@
       <option name="presentableId" value="Default" />
       <updated>1545072160072</updated>
       <workItem from="1545072167594" duration="16021000" />
-      <workItem from="1545100386420" duration="47181000" />
+      <workItem from="1545100386420" duration="51158000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="63202000" />
+    <option name="totallyTimeSpent" value="67179000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="6" y="23" width="1264" height="722" extended-state="0" />
@@ -289,29 +291,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/kube/generated-key.pgp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="5" lean-forward="true" selection-end-line="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/kube/generated_payload.json">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/kube/generated_signature.pgp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/kube/extract_private_key.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" selection-start-line="15" selection-end-line="17" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/kube/deletelater/setupdemobackup.sh">
       <provider selected="true" editor-type-id="text-editor">
@@ -386,17 +367,48 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/kube/my-private-key.asc">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/kube/my-base64-private-key.asc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/kube/generated-key.pgp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="5" lean-forward="true" selection-end-line="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/kube/generated_signature.pgp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/kube/onetime_setup.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" selection-start-line="12" selection-end-line="14" />
+        <state relative-caret-position="165">
+          <caret line="15" column="32" lean-forward="true" selection-start-line="15" selection-start-column="32" selection-end-line="15" selection-end-column="32" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/kube/generate_signature.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="722">
-          <caret line="50" column="24" lean-forward="true" selection-start-line="50" selection-start-column="24" selection-end-line="50" selection-end-column="24" />
+        <state relative-caret-position="210">
+          <caret line="14" column="57" lean-forward="true" selection-start-line="14" selection-start-column="57" selection-end-line="14" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/kube/extract_private_key.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="67" lean-forward="true" selection-start-line="14" selection-start-column="37" selection-end-line="14" selection-end-column="67" />
         </state>
       </provider>
     </entry>

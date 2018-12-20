@@ -5,7 +5,7 @@ ATTESTOR="binauth-attestor"
 ATTESTOR_EMAIL=nithdevsecops@gmail.com #the email associated with the project
 GENERATED_PAYLOAD="generated_payload.json"
 GENERATED_SIGNATURE="generated_signature.pgp"
-PRIVATE_KEY_FILE="./kube/my-private-key.asc"
+PRIVATE_KEY_FILE="/tmp/my-private-key.asc"
 PUBLIC_KEY_FILE="./kube/generated-key.pgp"
 
 IMAGE_PATH="gcr.io/${PROJECT_ID}/containerdemo"
